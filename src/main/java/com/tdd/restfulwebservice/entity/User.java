@@ -7,15 +7,14 @@ import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-//
-//import io.swagger.annotations.ApiModel;
-//import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//@ApiModel(description = "User details")
+@ApiModel(description = "User details")
 @Entity
 @Getter
 @Setter
@@ -28,11 +27,11 @@ public class User{
 	private Integer id;
 
 	@Size(min = 2, message = "Name should have at least 2 chacaracters")
-	//@ApiModelProperty(notes = "Name should have at least 2 chacaracters")
+	@ApiModelProperty(notes = "Name should have at least 2 chacaracters")
 	private String name;
 
 	@Past
-	//@ApiModelProperty(notes = "Birth date should be in the past")
+	@ApiModelProperty(notes = "Birth date should be in the past")
 	private LocalDate birthDate;
 
 	
