@@ -24,13 +24,12 @@ public class UserServiceIntegrationTest {
 
 	@Test
 	public void testCreateUserHappyPath() {
-
 		// Create a user
 		User aMockUser = new User();
 		aMockUser.setName("DummyName");
 		aMockUser.setBirthDate(LocalDate.of(2000, 4, 1));
 		
-		// Test adding the contact
+		// Test adding the user
 		User newUser = userService.createUser(aMockUser);
 
 		// Verify the addition

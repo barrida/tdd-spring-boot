@@ -30,10 +30,11 @@ public class UserServiceUnitTest {
 	@InjectMocks
 	private UserService userService;
 
-	@Before
-	public void setup() {
-		MockitoAnnotations.initMocks(this);
-	}
+	//We need this if we don't use @RunWith(MockitoJUnitRunner.class)
+	//	@Before
+	//	public void setup() {
+	//		MockitoAnnotations.initMocks(this);
+	//	}
 
 	@Test
 	public void testRetrieveAllUsersHappyPath() {
@@ -41,7 +42,6 @@ public class UserServiceUnitTest {
 		User aMockUser = new User();
 		aMockUser.setName("DummyName");
 		aMockUser.setBirthDate(LocalDate.of(2000, 4, 1));
-
 
 		when(userRepository.save(any(User.class))).thenReturn(aMockUser);
 

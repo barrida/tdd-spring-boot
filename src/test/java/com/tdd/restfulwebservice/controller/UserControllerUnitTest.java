@@ -39,9 +39,6 @@ public class UserControllerUnitTest {
 	@MockBean
 	private UserService userService;
 	
-	@InjectMocks
-	private UserController userController;
-
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);	
@@ -57,8 +54,6 @@ public class UserControllerUnitTest {
 		when(userService.createUser(any(User.class)))
 			.thenReturn(aMockUser);
 		
-		String requestBody = "{\"id\":null, \"name\":\"DummyName\",\"birthDate\":\"2016-02-11\"}";
-	
 		// simulate the form submit (POST)
 		mockMvc.perform(post("/users")
 				.contentType(MediaType.APPLICATION_JSON)

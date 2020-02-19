@@ -35,7 +35,7 @@ public class UserControllerIntegrationTest {
 		// POST our User form bean to the controller; check the outcome
 		ResponseEntity<User> newUser = userController.createUser(aMockUser);
 
-		// Assert THAT the outcome is as expected
+		// Assert that the outcome is as expected
 		assertThat(newUser.getStatusCode(), is(equalTo(HttpStatus.CREATED)));
 	}
 
